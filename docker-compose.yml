@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  SERVICENAME:
+    image: IMAGE
+    container_name: CONTAINER_NAME
+    environment:
+      - PUID=${PUID}
+      - PGID=${GUID}
+      - TZ=${TZ}
+    volumes:
+      - ${config_storage_path}SUBFOLDER/:/
+    ports:
+      - 80:80 #optional
+    restart: unless-stopped
+networks:
+  NETWORK_NAME:
